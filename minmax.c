@@ -8,14 +8,14 @@ int* loadFile(FILE *myFile){
   int i = 0;
 
 
-  int **arr;
+  int *arr;
   arr = malloc(fileLength*sizeof(int*));
 
   while(!feof(myFile)){
     arr[i] = malloc(sizeof(int));
     fscanf(myFile,"%d",&arr[i]);
-    //printf("Number is %d\n",arr[i]);
-
+    //printf("Number %d in %d\n",arr[i],i);
+    i = i + 1;
   }
 
   return arr;
@@ -30,9 +30,11 @@ int main(int argc, char *argv[]){
   int *numArray = loadFile(myFile);
 
   int index = 0;
-  for(index = 0; index < 7;index++){
+  for(index = 0; index < 8; index++){
     printf("%d\n",numArray[index]);
   }
+
+
 
   fclose(myFile);
   return 0;
