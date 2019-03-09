@@ -1,0 +1,17 @@
+Problem 3  
+
+1) What happens if root process A is terminated prematurely, by issuing: kill -KILL ? 
+
+When the root process A is terminated prematurely by issuing kill,
+the  child process will run itself and this process is called Orphan Process and this orphaned process will immediately be adopted by the  special init system process and this operation of adopting will be known as re-parenting process. 
+
+2) What happens if you display the process tree with root pstree(getpid()) instead of pstree(pid()) in main()? Which other processes appear in the tree and why? 
+
+Pstree is the  linux command that shows the running process as a tree. 
+By doing the root pstree(getpid()) we have to make sure that the other process with  the root are also alive. 
+The other process that appear will be because they will be still waiting for there child to get complete and terminate. 
+
+3) What is the maximum random tree you can generate? Why? 
+
+The maximum random tree one can generate will depend upon the system and also how one codes. 
+When we coded we got about 2^14 –1 and for other system it showed us 2^15-1 trees. Inconclusion , it all depends on the system
